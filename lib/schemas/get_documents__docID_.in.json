@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "docID": {
+            "required": true,
+            "type": "string",
+            "default": "A002068"
+        }
+    }
+}

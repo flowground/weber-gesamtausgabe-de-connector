@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "fromDate": {
+            "required": true,
+            "type": "string",
+            "format": "date",
+            "default": "1786-11-18"
+        },
+        "toDate": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        },
+        "docType": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "biblio",
+                    "diaries",
+                    "documents",
+                    "letters",
+                    "news",
+                    "orgs",
+                    "persons",
+                    "places",
+                    "thematicCommentaries",
+                    "var",
+                    "works",
+                    "writings"
+                ],
+                "type": "string"
+            }
+        },
+        "offset": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 1,
+            "default": 1
+        },
+        "limit": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 200,
+            "default": 10
+        }
+    }
+}

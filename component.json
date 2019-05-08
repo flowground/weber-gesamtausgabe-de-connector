@@ -1,0 +1,136 @@
+{
+    "title": "WeGA",
+    "description": "The OpenAPI documentation for the RESTful interface of the Carl-Maria-von-Weber-Gesamtausgabe. <br/> (No registration, authentication, or API key is required) <br/> For feedback or requests about this API please contact stadler@weber-gesamtausgabe.de or start the discussion at https://github.com/Edirom/WeGA-WebApp",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/weber-gesamtausgabe.de/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://weber-gesamtausgabe.de/api/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_code_findByElement__element_": {
+            "main": "./lib/actions/get_code_findByElement__element_.js",
+            "title": "Finds code samples by XML element",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_code_findByElement__element_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_documents": {
+            "main": "./lib/actions/get_documents.js",
+            "title": "Lists all documents",
+            "description": "The Documents endpoint returns a list of all documents from the WeGA digital edition.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_documents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_documents_findByAuthor__authorID_": {
+            "main": "./lib/actions/get_documents_findByAuthor__authorID_.js",
+            "title": "Finds documents by author",
+            "description": "This endpoint returns a list of documents by a given author - optionally filtered by document type \n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_documents_findByAuthor__authorID_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_documents_findByDate": {
+            "main": "./lib/actions/get_documents_findByDate.js",
+            "title": "Finds documents by date",
+            "description": "This endpoint returns a list of documents related to the given date - optionally filtered by document type. \n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_documents_findByDate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_documents_findByMention__docID_": {
+            "main": "./lib/actions/get_documents_findByMention__docID_.js",
+            "title": "Finds documents by reference",
+            "description": "This endpoint returns a list of documents that reference a particular docID - optionally filtered by document type. \n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_documents_findByMention__docID_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_documents__docID_": {
+            "main": "./lib/actions/get_documents__docID_.js",
+            "title": "Returns documents by ID",
+            "description": "This endpoint returns documents, indicated by an ID.\n Accepted ID formats are WeGA, e.g. A002068 or http://weber-gesamtausgabe.de/A002068, VIAF, e.g. http://viaf.org/viaf/310642461, or  GND, e.g. http://d-nb.info/gnd/118629662\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_documents__docID_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

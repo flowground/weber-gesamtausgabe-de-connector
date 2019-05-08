@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "docID": {
+            "required": true,
+            "type": "string",
+            "default": "A002068"
+        },
+        "docType": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "biblio",
+                    "diaries",
+                    "documents",
+                    "letters",
+                    "news",
+                    "orgs",
+                    "persons",
+                    "places",
+                    "thematicCommentaries",
+                    "var",
+                    "works",
+                    "writings"
+                ],
+                "type": "string"
+            }
+        },
+        "offset": {
+            "type": "integer",
+            "format": "int32",
+            "minimum": 1,
+            "default": 1
+        },
+        "limit": {
+            "type": "integer",
+            "format": "int32",
+            "maximum": 200,
+            "default": 10
+        }
+    }
+}
